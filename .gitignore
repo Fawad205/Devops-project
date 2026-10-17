@@ -1,0 +1,11 @@
+# General temporary files
+*.log
+*.swp
+*.swo
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Language/framework not selected yet.
+# Add language-specific rules once selected.
