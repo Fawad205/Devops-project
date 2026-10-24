@@ -9,3 +9,6 @@ Thumbs.db
 
 # Language/framework not selected yet.
 # Add language-specific rules once selected.
+node_modules/
+out/
+*.tgz
