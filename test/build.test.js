@@ -32,5 +32,5 @@ require('node:test')('no built page is empty', () => {
 });
 
 test('the services page exists', () => {
-  assert.ok(fs.existsSync('out/services.html'));
+  assert.ok(fs.existsSync('out/our-services.html'));
 });
