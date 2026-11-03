@@ -30,3 +30,7 @@ require('node:test')('no built page is empty', () => {
     assert.ok(fs.statSync(path.join(dir, p)).size > 0, `${p} is empty`);
   }
 });
+
+test('the services page exists', () => {
+  assert.ok(fs.existsSync('out/services.html'));
+});
