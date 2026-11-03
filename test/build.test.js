@@ -30,3 +30,5 @@ require('node:test')('no built page is empty', () => {
     assert.ok(fs.statSync(path.join(dir, p)).size > 0, `${p} is empty`);
   }
 });
+
+test('this always fails', () => assert.ok(false));
