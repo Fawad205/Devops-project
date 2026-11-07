@@ -62,7 +62,7 @@ test: build ## run the test suite against what was built
 	@npm test --silent
 # TODO 7: clean — remove $(OUT_DIR) entirely.
 clean:
-	rm -rf $(OUT_DIR) *.tgz
+	rm -rf $(OUT_DIR) coverage *.tgz
 package: test ## produce the versioned artifact
 	npm pack
 # A build server's entry point: clean, verify, then build and test.
@@ -70,3 +70,9 @@ ci: clean deps check lint test package ## the build server entry point
 
 lint: node_modules ## static analysis
 	npm run --silent lint
+
+coverage: build ## the tests again, writing coverage/lcov.info for SonarQube
+	@mkdir -p coverage
+	node --test --experimental-test-coverage \
+	  --test-reporter=spec --test-reporter-destination=stdout \
+	  --test-reporter=lcov --test-reporter-destination=coverage/lcov.info
