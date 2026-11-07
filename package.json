@@ -1,11 +1,13 @@
 {
   "name": "@fawad205/devops-pipeline",
   "version": "1.1.0",
-   "repository": {
+  "repository": {
     "type": "git",
     "url": "git+https://github.com/Fawad205/devops-project.git"
   },
-  "publishConfig": { "registry": "https://npm.pkg.github.com" },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "description": "Renders the course Markdown sources into HTML pages.",
   "main": "tools/build.js",
   "directories": {
@@ -13,7 +15,8 @@
   },
   "scripts": {
     "test": "node --test",
-    "build": "node tools/build.js"
+    "build": "node tools/build.js",
+    "lint":"eslint"
   },
   "keywords": [],
   "author": "",
@@ -27,5 +30,10 @@
   "files": [
     "tools/",
     "README.md"
-  ]
+  ],
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.14.0",
+    "globals": "^17.14.0"
+  }
 }
