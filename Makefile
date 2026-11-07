@@ -66,4 +66,7 @@ clean:
 package: test ## produce the versioned artifact
 	npm pack
 # A build server's entry point: clean, verify, then build and test.
-ci: clean deps check test package ## the build server entry point
+ci: clean deps check lint test package ## the build server entry point
+
+lint: node_modules ## static analysis
+	npm run --silent lint
